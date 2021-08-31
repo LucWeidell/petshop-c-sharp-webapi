@@ -56,7 +56,7 @@ namespace petshop.Controllers
     {
         try
         {
-            fakeDB.Cats.Add(newCat);
+            FakeDB.Cats.Add(newCat);
             return Ok(newCat);
         }
         catch (System.Exception err)
@@ -70,7 +70,7 @@ namespace petshop.Controllers
     {
         try
         {
-            int deleted = fakeDB.Cats.RemoveAll(c => c.Id == id);
+            int deleted = FakeDB.Cats.RemoveAll(c => c.Id == id);
             if(deleted == 0){
                 throw new System.Exception("Invalid Id");
             }
