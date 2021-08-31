@@ -23,7 +23,7 @@ namespace petshop.Models
       Mood = mood;
 
       // NOTE global id creation but nly used cause fakeDb
-      Id = Guid.NewGuid().ToString();
+      Id = System.Guid.NewGuid().ToString();
 
     }
     }

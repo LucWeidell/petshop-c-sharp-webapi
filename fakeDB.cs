@@ -1,3 +1,6 @@
+using System.Collections.Generic;
+using petshop.Models;
+
 namespace petshop
 {
     public class fakeDB

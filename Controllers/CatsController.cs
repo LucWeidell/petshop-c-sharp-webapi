@@ -1,4 +1,7 @@
-// using Microsoft.AspNetCore.MVC
+
+using System.Collections.Generic;
+using Microsoft.AspNetCore.Mvc;
+using petshop.Models;
 
 namespace petshop.Controllers
 {
@@ -34,7 +37,7 @@ namespace petshop.Controllers
     {
         try
         {
-            CatsController found = fakeDB.Cats.Find(c => c.Id == id);
+            Cat found = fakeDB.Cats.Find(c => c.Id == id);
             if(found == null) {
                 throw new System.Exception("Invalid Id");
             }
@@ -49,21 +52,21 @@ namespace petshop.Controllers
     [HttpPost]
     // req.body : [fromBody]
     // C# will take the body and try to convert it into the type provided
-    public ActionResult<Cat> Create([FromBody] CatsController newCat)
+    public ActionResult<Cat> Create([FromBody] Cat newCat)
     {
         try
         {
             fakeDB.Cats.Add(newCat);
             return Ok(newCat);
         }
-        catch (System.Exception)
+        catch (System.Exception err)
         {
-            return BadRequest(err.Mesage);
+            return BadRequest(err.Message);
         }
     }
 
     [HttpPost("{id}")]
-    public ActionResult<String> Delete(string id)
+    public ActionResult<string> Delete(string id)
     {
         try
         {

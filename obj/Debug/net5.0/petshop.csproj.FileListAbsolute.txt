@@ -1,0 +1,6 @@
+C:\Users\lucwe\OneDrive\Documents\vs_code_portal\codeWorks\Week10\Day2\petshop\obj\Debug\net5.0\petshop.csproj.AssemblyReference.cache
+C:\Users\lucwe\OneDrive\Documents\vs_code_portal\codeWorks\Week10\Day2\petshop\obj\Debug\net5.0\petshop.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\lucwe\OneDrive\Documents\vs_code_portal\codeWorks\Week10\Day2\petshop\obj\Debug\net5.0\petshop.AssemblyInfoInputs.cache
+C:\Users\lucwe\OneDrive\Documents\vs_code_portal\codeWorks\Week10\Day2\petshop\obj\Debug\net5.0\petshop.AssemblyInfo.cs
+C:\Users\lucwe\OneDrive\Documents\vs_code_portal\codeWorks\Week10\Day2\petshop\obj\Debug\net5.0\petshop.csproj.CoreCompileInputs.cache
+C:\Users\lucwe\OneDrive\Documents\vs_code_portal\codeWorks\Week10\Day2\petshop\obj\Debug\net5.0\petshop.MvcApplicationPartsAssemblyInfo.cache
