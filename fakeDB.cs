@@ -3,7 +3,7 @@ using petshop.Models;
 
 namespace petshop
 {
-    public class fakeDB
+    public class FakeDB
     {
         public static List<Cat> Cats { get; set; } = new List<Cat>() { new Cat("Garfield", 12, "hungry")};
     }

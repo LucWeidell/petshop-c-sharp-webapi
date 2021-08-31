@@ -20,7 +20,7 @@ namespace petshop.Controllers
         {
             try
             {
-                return fakeDB.Cats;
+                return FakeDB.Cats;
             }
             catch (System.Exception err)
             {
@@ -37,7 +37,7 @@ namespace petshop.Controllers
     {
         try
         {
-            Cat found = fakeDB.Cats.Find(c => c.Id == id);
+            Cat found = FakeDB.Cats.Find(c => c.Id == id);
             if(found == null) {
                 throw new System.Exception("Invalid Id");
             }
