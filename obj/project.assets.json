@@ -5,7 +5,9 @@
   },
   "libraries": {},
   "projectFileDependencyGroups": {
-    "net5.0": []
+    "net5.0": [
+      "Swashbuckle.AspNetCore >= 6.2.1"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\lucwe\\.nuget\\packages\\": {}
@@ -40,6 +42,12 @@
     "frameworks": {
       "net5.0": {
         "targetAlias": "net5.0",
+        "dependencies": {
+          "Swashbuckle.AspNetCore": {
+            "target": "Package",
+            "version": "[6.2.1, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",
@@ -61,5 +69,16 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Swashbuckle.AspNetCore (>= 6.2.1)' for 'net5.0'.",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

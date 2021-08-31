@@ -1,8 +1,18 @@
 {
   "version": 2,
-  "dgSpecHash": "X5gT4SV06CtcSDkrymaHg8tOYMdDjU/Mtk5gL+n4piBdBEniqCP6p/oL4Tb4s4T6iXSXn8gQy80tCflM5INGXg==",
-  "success": true,
+  "dgSpecHash": "UM4aHxAeyKMXSgIvaYuU2T5FrKkDwS5nSClNL6bu33wxRAbborzfQJk57xibDy5IQNbN9o52XuOr/ROPKi1Qwg==",
+  "success": false,
   "projectFilePath": "C:\\Users\\lucwe\\OneDrive\\Documents\\vs_code_portal\\codeWorks\\Week10\\Day2\\petshop\\petshop.csproj",
   "expectedPackageFiles": [],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1100",
+      "level": "Error",
+      "message": "Unable to resolve 'Swashbuckle.AspNetCore (>= 6.2.1)' for 'net5.0'.",
+      "libraryId": "Swashbuckle.AspNetCore",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
 }

@@ -14,12 +14,12 @@ namespace petshop.Controllers
     public class CatsController : ControllerBase
     {
 
-        private readonly CatsService catsService;
+        private readonly CatsService _catsService;
 
         // NOTE make sure you add the transient servicer in the Startup File so this constructer passes
         public CatsController(CatsService catsService)
         {
-            this.catsService = catsService;
+            _catsService = catsService;
         }
 
     // GetAll throw GET request
@@ -30,13 +30,12 @@ namespace petshop.Controllers
         {
             try
             {
-                IEnumerable<Cat> cats = catsService.Get();
-                return FakeDB.Cats;
+                IEnumerable<Cat> cats = _catsService.Get();
+                return Ok(cats);
             }
             catch (System.Exception err)
             {
                 return BadRequest(err.Message);
-                throw;
             }
         }
 
@@ -44,11 +43,11 @@ namespace petshop.Controllers
     // Example if it was a number you would say int id instead
     [HttpGet("{id}")]
     // req.params.id : value caputured in parameters
-    public ActionResult<CatsController> Get(string id)
+    public ActionResult<Cat> Get(string id)
     {
         try
         {
-            Cat found = catsService.Get(id);
+            Cat found = _catsService.Get(id);
             return Ok(found);
         }
         catch (System.Exception err)
@@ -73,12 +72,12 @@ namespace petshop.Controllers
         }
     }
 
-    [HttpPost("{id}")]
+    [HttpDelete("{id}")]
     public ActionResult<string> Delete(string id)
     {
         try
         {
-            catsService.Delete(id);
+            _catsService.Delete(id);
             return Ok("Deleted Cat");
         }
         catch (System.Exception err)
