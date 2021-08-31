@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Mvc;
 using petshop.Models;
+using petshop.Services;
 
 namespace petshop.Controllers
 {
@@ -12,14 +13,24 @@ namespace petshop.Controllers
     [Route("/api/[controller]")]
     public class CatsController : ControllerBase
     {
-        // GetAll throw GET request
-        [HttpGet]
+
+        private readonly CatsService catsService;
+
+        // NOTE make sure you add the transient servicer in the Startup File so this constructer passes
+        public CatsController(CatsService catsService)
+        {
+            this.catsService = catsService;
+        }
+
+    // GetAll throw GET request
+    [HttpGet]
         // ActionResult is a http responce type with data in an array collection<CAT>
         // returns HTTPResult (ok, badRequest, forbidden) of type collection (aka IEnumerable) of type Cat
         public ActionResult <IEnumerable<Cat>> Get()
         {
             try
             {
+                IEnumerable<Cat> cats = catsService.Get();
                 return FakeDB.Cats;
             }
             catch (System.Exception err)
@@ -37,10 +48,7 @@ namespace petshop.Controllers
     {
         try
         {
-            Cat found = FakeDB.Cats.Find(c => c.Id == id);
-            if(found == null) {
-                throw new System.Exception("Invalid Id");
-            }
+            Cat found = catsService.Get(id);
             return Ok(found);
         }
         catch (System.Exception err)
@@ -56,7 +64,7 @@ namespace petshop.Controllers
     {
         try
         {
-            FakeDB.Cats.Add(newCat);
+
             return Ok(newCat);
         }
         catch (System.Exception err)
@@ -70,11 +78,8 @@ namespace petshop.Controllers
     {
         try
         {
-            int deleted = FakeDB.Cats.RemoveAll(c => c.Id == id);
-            if(deleted == 0){
-                throw new System.Exception("Invalid Id");
-            }
-            return Ok("Successfully Deleted Cat");
+            catsService.Delete(id);
+            return Ok("Deleted Cat");
         }
         catch (System.Exception err)
         {
